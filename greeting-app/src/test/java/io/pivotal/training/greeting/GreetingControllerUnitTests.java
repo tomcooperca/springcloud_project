@@ -1,6 +1,5 @@
 package io.pivotal.training.greeting;
 
-import io.pivotal.training.fortune.FortuneService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,15 +9,13 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.ui.ExtendedModelMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GreetingControllerUnitTests {
 
   @Mock private GreetingProperties greetingProperties;
-  @Mock private FortuneService fortuneService;
+  @Mock private FortuneServiceClient fortuneService;
   private GreetingController controller;
   private ExtendedModelMap model;
 

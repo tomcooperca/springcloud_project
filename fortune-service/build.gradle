@@ -31,4 +31,5 @@ dependencies {
   compileOnly 'org.projectlombok:lombok'
 
   testCompile 'org.springframework.boot:spring-boot-starter-test'
+  testCompile 'com.github.tomakehurst:wiremock-standalone:2.7.1'
 }

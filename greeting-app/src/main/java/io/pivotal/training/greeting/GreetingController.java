@@ -1,6 +1,5 @@
 package io.pivotal.training.greeting;
 
-import io.pivotal.training.fortune.FortuneService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -13,9 +12,9 @@ public class GreetingController {
   private final Logger logger = LoggerFactory.getLogger(GreetingController.class);
 
   private final GreetingProperties greetingProperties;
-  private final FortuneService fortuneService;
+  private final FortuneServiceClient fortuneService;
 
-  public GreetingController(GreetingProperties greetingProperties, FortuneService fortuneService) {
+  public GreetingController(GreetingProperties greetingProperties, FortuneServiceClient fortuneService) {
     this.greetingProperties = greetingProperties;
     this.fortuneService = fortuneService;
   }

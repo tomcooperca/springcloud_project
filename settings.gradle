@@ -1,0 +1,2 @@
+include 'greeting-app'
+include 'fortune-service'

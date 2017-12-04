@@ -1,2 +1,3 @@
 include 'greeting-app'
 include 'fortune-service'
+include 'hystrix-dashboard'

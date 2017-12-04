@@ -17,7 +17,7 @@ public class FortuneServiceClientTests {
     @Autowired
     FortuneServiceClient fortuneServiceClient;
 
-    public static final String expectedFortune = "my test fortune";
+    public static final String expectedFortune = "a random fortune";
 
     @Test
     public void shouldReturnAFortune() {

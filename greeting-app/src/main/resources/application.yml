@@ -6,8 +6,6 @@ management:
     enabled: false
 greeting:
   displayFortune: true
-fortuneService:
-  baseUrl: http://localhost:8081/
 eureka:
   client:
     serviceUrl:

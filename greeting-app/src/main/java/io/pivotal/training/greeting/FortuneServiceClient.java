@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -38,8 +39,9 @@ public class FortuneServiceClient {
 
     private String lookupUrlFor(String app) {
         List<ServiceInstance> instances = discoveryClient.getInstances(app);
+        Collections.shuffle(instances);
         return instances.stream()
-                .findFirst()
+                .findAny()
                 .map(ServiceInstance::getUri)
                 .map(URI::toString)
                 .orElseThrow(RuntimeException::new);

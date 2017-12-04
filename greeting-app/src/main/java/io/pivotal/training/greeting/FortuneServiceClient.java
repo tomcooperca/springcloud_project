@@ -22,12 +22,12 @@ import java.util.Map;
 public class FortuneServiceClient {
 
     DiscoveryClient discoveryClient;
-    RestTemplate restTemplate;
+    FortuneServiceFeignClient client;
 
     @HystrixCommand(fallbackMethod = "defaultFortune")
     public String getFortune() {
         String baseUrl = lookupUrlFor("FORTUNE");
-        Map fortune = restTemplate.getForObject(baseUrl, Map.class);
+        Map fortune = client.getFortune();
         return (String) fortune.get("fortune");
     }
 

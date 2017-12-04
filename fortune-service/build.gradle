@@ -28,9 +28,13 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    springCloudVersion = 'Dalston.SR3'
+}
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-contract-dependencies:${contractVerifierVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
 
@@ -42,7 +46,7 @@ contracts {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-actuator'
-
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
     runtime 'org.springframework.boot:spring-boot-devtools'
 
     compileOnly 'org.projectlombok:lombok'
